@@ -1,0 +1,54 @@
+[11ápr.2020 14:09:50.187] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevclient, --fml.mcpVersion, 20200122.131323, --fml.mcVersion, 1.15.2, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 31.1.9, --version, MOD_DEV, --assetIndex, 1.15, --assetsDir, C:\Users\pbabcsany\.gradle\caches\forge_gradle\assets, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[11ápr.2020 14:09:50.194] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 5.0.0-milestone.4+67+b1a340b starting: java version 1.8.0_201 by Oracle Corporation
+[11ápr.2020 14:09:50.660] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[11ápr.2020 14:09:50.734] [main/WARN] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Configuration file C:\pt\modding\Temple-Craft\run\config\fml.toml is not correct. Correcting
+[11ápr.2020 14:09:50.754] [main/WARN] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [defaultConfigPath] was corrected from null to defaultconfigs
+[11ápr.2020 14:09:50.755] [main/WARN] [net.minecraftforge.fml.loading.FMLConfig/CORE]: Incorrect key [maxThreads] was corrected from null to -1
+[11ápr.2020 14:09:50.756] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: com.electronwill.nightconfig.core.io.ParsingException: Invalid TOML data: entry "[maxThreads]" defined twice in its table.
+[11ápr.2020 14:09:50.756] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.toml.TableParser.checkDuplicateKey(TableParser.java:88)
+[11ápr.2020 14:09:50.757] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.toml.TableParser.parseNormal(TableParser.java:59)
+[11ápr.2020 14:09:50.757] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.toml.TomlParser.parse(TomlParser.java:44)
+[11ápr.2020 14:09:50.758] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.toml.TomlParser.parse(TomlParser.java:37)
+[11ápr.2020 14:09:50.758] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.core.io.ConfigParser.parse(ConfigParser.java:113)
+[11ápr.2020 14:09:50.758] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.core.io.ConfigParser.parse(ConfigParser.java:219)
+[11ápr.2020 14:09:50.759] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.core.io.ConfigParser.parse(ConfigParser.java:202)
+[11ápr.2020 14:09:50.759] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.core.file.WriteSyncFileConfig.load(WriteSyncFileConfig.java:73)
+[11ápr.2020 14:09:50.760] [Thread-1/INFO] [STDERR/]: [com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread:run:183]: 	at com.electronwill.nightconfig.core.file.FileWatcher$WatcherThread.run(FileWatcher.java:181)
+[11ápr.2020 14:09:52.400] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevclient' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\pbabcsany\.gradle\caches\forge_gradle\assets, --assetIndex, 1.15, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[11ápr.2020 14:09:56.988] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[11ápr.2020 14:10:09.503] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.2.2 build 10
+[11ápr.2020 14:10:11.332] [modloading-worker-2/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 31.1.9, for MC 1.15.2 with MCP 20200122.131323
+[11ápr.2020 14:10:11.332] [modloading-worker-2/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v31.1.9 Initialized
+[11ápr.2020 14:10:12.641] [Render thread/INFO] [com.babcsany.minecraft.templecraft.TempleCraft/]: HELLO from Register Block
+[11ápr.2020 14:10:17.273] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[11ápr.2020 14:10:17.387] [Render thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, Mod Resources
+[11ápr.2020 14:10:18.140] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file C:\pt\modding\Temple-Craft\run\config\forge-client.toml is not correct. Correcting
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client was corrected from null to SimpleCommentedConfig:{}
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.zoomInMissingModelTextInGui was corrected from null to false
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.forgeCloudsEnabled was corrected from null to true
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.disableStairSlabCulling was corrected from null to false
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.alwaysSetupTerrainOffThread was corrected from null to false
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.forgeLightPipelineEnabled was corrected from null to true
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.selectiveResourceReloadEnabled was corrected from null to true
+[11ápr.2020 14:10:18.141] [Server-Worker-2/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Incorrect key client.showLoadWarnings was corrected from null to true
+[11ápr.2020 14:10:18.148] [modloading-worker-2/INFO] [com.babcsany.minecraft.templecraft.TempleCraft/]: HELLO FROM PREINIT
+[11ápr.2020 14:10:18.148] [modloading-worker-2/INFO] [com.babcsany.minecraft.templecraft.TempleCraft/]: DIRT BLOCK >> minecraft:dirt
+[11ápr.2020 14:10:18.325] [modloading-worker-2/INFO] [com.babcsany.minecraft.templecraft.TempleCraft/]: Got game settings net.minecraft.client.GameSettings@2d2997bb
+[11ápr.2020 14:10:18.354] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[11ápr.2020 14:10:19.184] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 31.1.9 Target: 31.1.43
+[11ápr.2020 14:10:22.829] [modloading-worker-0/INFO] [com.babcsany.minecraft.templecraft.TempleCraft/]: Hello world from the MDK
+[11ápr.2020 14:10:22.829] [modloading-worker-0/INFO] [com.babcsany.minecraft.templecraft.TempleCraft/]: Got IMC [Hello world]
+[11ápr.2020 14:10:23.574] [Render thread/INFO] [net.minecraft.client.audio.SoundSystem/]: OpenAL initialized.
+[11ápr.2020 14:10:23.576] [Render thread/INFO] [net.minecraft.client.audio.SoundEngine/SOUNDS]: Sound engine started
+[11ápr.2020 14:10:23.981] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[11ápr.2020 14:10:24.227] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 128x128x4 minecraft:textures/atlas/signs.png-atlas
+[11ápr.2020 14:10:24.228] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[11ápr.2020 14:10:24.233] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[11ápr.2020 14:10:24.239] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[11ápr.2020 14:10:24.241] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[11ápr.2020 14:10:24.244] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[11ápr.2020 14:10:24.944] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[11ápr.2020 14:10:24.957] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[11ápr.2020 14:10:24.959] [Render thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[11ápr.2020 14:10:25.661] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[11ápr.2020 14:11:08.205] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
