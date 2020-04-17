@@ -1,0 +1,7 @@
+{
+  "parent": "block/oak_door_top_hinge",
+  "textures": {
+    "bottom": "temple-craft:block/temple_door_lower",
+    "top": "temple-craft:block/temple_door_upper"
+  }
+}

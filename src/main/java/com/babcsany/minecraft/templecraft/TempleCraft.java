@@ -1,11 +1,17 @@
 package com.babcsany.minecraft.templecraft;
 
+import com.babcsany.minecraft.templecraft.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -13,30 +19,37 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("temple-craft")
+@Mod(TempleCraft.MOD_ID)
 public class TempleCraft {
+
+    public static final String MOD_ID = "temple-craft";
 
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    private final IEventBus modEventBus;
 
     public TempleCraft() {
         // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        modEventBus.addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        modEventBus.addListener(this::processIMC);
         // Register the doClientStuff method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        modEventBus.addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        BlockInit.BLOCKS.register(modEventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -80,6 +93,22 @@ public class TempleCraft {
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
             LOGGER.info("HELLO from Register Block");
+        }
+
+        @SubscribeEvent
+        public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
+            final IForgeRegistry<Item> registry = event.getRegistry();
+            BlockInit.BLOCKS.getEntries().stream()
+                    .map(RegistryObject::get)
+                    .forEach(block -> {
+                        final Item.Properties properties = new Item.Properties();
+                        final BlockItem blockItem = new BlockItem(block, properties);
+                        ResourceLocation registryName = block.getRegistryName();
+                        if (null != registryName) {
+                            blockItem.setRegistryName(registryName);
+                        }
+                        registry.register(blockItem);
+                    });
         }
     }
 }
