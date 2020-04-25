@@ -1,23 +1,19 @@
 package com.babcsany.minecraft.templecraft.block;
 
+import com.babcsany.minecraft.templecraft.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DoorBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.IFluidState;
 import net.minecraft.item.ItemStack;
-import net.minecraft.pathfinding.PathType;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
 
 public class TempleDoorBlock extends DoorBlock {
     public TempleDoorBlock() {
@@ -30,12 +26,20 @@ public class TempleDoorBlock extends DoorBlock {
     }
 
     @Override
-    public @NotNull ActionResultType func_225533_a_(@NotNull BlockState state, @NotNull World world, @NotNull BlockPos blockPos, @NotNull PlayerEntity player, @NotNull Hand hand, @NotNull BlockRayTraceResult raytraceResult) {
-        if (player.getHeldItemMainhand().isEmpty() && !player.isCreative()) {
+    public ActionResultType func_225533_a_(BlockState state, World world, BlockPos blockPos, PlayerEntity player, Hand hand, BlockRayTraceResult raytraceResult) {
+        if (player.getHeldItemMainhand().isItemEqual(new ItemStack(() -> ItemInit.TEMPLE_RECOMMEND.get())) && !player.isCreative()) {
             return super.func_225533_a_(state, world, blockPos, player, hand, raytraceResult);
         } else {
             return ActionResultType.PASS;
         }
     }
 
+    @Override
+    public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity player, boolean willHarvest, IFluidState fluid) {
+        if (player.isCreative()) {
+            return false;
+        } else {
+            return super.removedByPlayer(state, world, pos, player, willHarvest, fluid);
+        }
+    }
 }

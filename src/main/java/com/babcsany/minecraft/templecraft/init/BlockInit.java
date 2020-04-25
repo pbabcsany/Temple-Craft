@@ -20,4 +20,13 @@ public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, TempleCraft.MOD_ID);
 
     public static final RegistryObject<Block> TEMPLE_DOOR = BLOCKS.register("temple_door", TempleDoorBlock::new);
+    public static final RegistryObject<Block> TEMPLE_FOUNDATION = BLOCKS.register("temple_foundation", () -> new Block(
+            Block.Properties.create(Material.ROCK, MaterialColor.WHITE_TERRACOTTA)
+                    .hardnessAndResistance(-1.0F, 4000000.F)
+                    .lightValue(15)
+    ));
+    public static final RegistryObject<Block> ANGEL_MORONI = BLOCKS.register("angel-moroni", () -> new Block(
+            Block.Properties.create(Material.ROCK, MaterialColor.GOLD)
+                    .hardnessAndResistance(-1.0F, 4000000.0F)
+    ));
 }

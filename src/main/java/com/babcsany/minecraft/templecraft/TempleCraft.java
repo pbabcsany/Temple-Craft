@@ -1,13 +1,18 @@
 package com.babcsany.minecraft.templecraft;
 
 import com.babcsany.minecraft.templecraft.init.BlockInit;
+import com.babcsany.minecraft.templecraft.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -49,6 +54,7 @@ public class TempleCraft {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        ItemInit.ITEMS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
     }
 
@@ -111,4 +117,18 @@ public class TempleCraft {
                     });
         }
     }
+
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ForgeEvents {
+        @SubscribeEvent
+        public static final void onLeftClickBlock(final PlayerInteractEvent.LeftClickBlock event) {
+            PlayerEntity player = event.getPlayer();
+            ResourceLocation templeBuildingBlocksTagId = new ResourceLocation(TempleCraft.MOD_ID, "temple_building_blocks");
+            Tag<Block> templeBuildingBlocks = BlockTags.getCollection().get(templeBuildingBlocksTagId);
+            if (event.getWorld().hasBlockState(event.getPos(), blockState -> blockState.isIn(templeBuildingBlocks) && blockState.getLightValue() == 15)) {
+                event.setCanceled(true);
+            }
+        }
+    }
+
 }
