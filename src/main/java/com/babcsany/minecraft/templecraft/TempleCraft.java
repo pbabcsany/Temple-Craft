@@ -8,7 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.ITag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -124,8 +124,8 @@ public class TempleCraft {
         public static final void onLeftClickBlock(final PlayerInteractEvent.LeftClickBlock event) {
             PlayerEntity player = event.getPlayer();
             ResourceLocation templeBuildingBlocksTagId = new ResourceLocation(TempleCraft.MOD_ID, "temple_building_blocks");
-            Tag<Block> templeBuildingBlocks = BlockTags.getCollection().get(templeBuildingBlocksTagId);
-            if (event.getWorld().hasBlockState(event.getPos(), blockState -> blockState.isIn(templeBuildingBlocks) && blockState.getLightValue() == 15)) {
+            ITag<Block> templeBuildingBlocks = BlockTags.getCollection().get(templeBuildingBlocksTagId);
+            if (event.getWorld().hasBlockState(event.getPos(), blockState -> templeBuildingBlocks != null && blockState.isIn(templeBuildingBlocks) && blockState.getLightValue() == 15)) {
                 event.setCanceled(true);
             }
         }

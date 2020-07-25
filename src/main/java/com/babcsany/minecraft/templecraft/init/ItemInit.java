@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemInit {
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, TempleCraft.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TempleCraft.MOD_ID);
 
     public static final RegistryObject<Item> TEMPLE_RECOMMEND = ITEMS.register("temple_recommend", () -> new Item(
             (new Item.Properties())

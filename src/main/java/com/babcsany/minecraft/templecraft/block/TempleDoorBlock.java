@@ -7,7 +7,6 @@ import net.minecraft.block.DoorBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.IFluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -18,7 +17,7 @@ import net.minecraft.world.World;
 public class TempleDoorBlock extends DoorBlock {
     public TempleDoorBlock() {
         super(Block.Properties.create(Material.WOOD, MaterialColor.GOLD)
-                .lightValue(15)
+                .setLightLevel(value -> 15)
                 .hardnessAndResistance(-1.0F, 3600000.0F)
                 .noDrops()
                 .variableOpacity()
@@ -26,14 +25,15 @@ public class TempleDoorBlock extends DoorBlock {
     }
 
     @Override
-    public ActionResultType func_225533_a_(BlockState state, World world, BlockPos blockPos, PlayerEntity player, Hand hand, BlockRayTraceResult raytraceResult) {
+    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos blockPos, PlayerEntity player, Hand hand, BlockRayTraceResult raytraceResult) {
         if (player.getHeldItemMainhand().isItemEqual(new ItemStack(() -> ItemInit.TEMPLE_RECOMMEND.get())) && !player.isCreative()) {
-            return super.func_225533_a_(state, world, blockPos, player, hand, raytraceResult);
+            return super.onBlockActivated(state, world, blockPos, player, hand, raytraceResult);
         } else {
             return ActionResultType.PASS;
         }
     }
 
+/*
     @Override
     public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity player, boolean willHarvest, IFluidState fluid) {
         if (player.isCreative()) {
@@ -42,4 +42,5 @@ public class TempleDoorBlock extends DoorBlock {
             return super.removedByPlayer(state, world, pos, player, willHarvest, fluid);
         }
     }
+*/
 }

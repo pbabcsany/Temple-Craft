@@ -5,15 +5,16 @@
       <configuration>
         <autoDetectTypes>
           <platformType>FORGE</platformType>
+          <platformType>MIXIN</platformType>
           <platformType>MCP</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="mappingFile" value="C:\pt\modding\Temple-Craft\build\createMcpToSrg\output.tsrg" />
-    <option name="mcpVersion" value="stable_60-1.15" />
-    <option name="minecraftVersion" value="1.15.2" />
+    <option name="mappingFile" value="$MODULE_DIR$/../../build/createMcpToSrg/output.tsrg" />
+    <option name="mcpVersion" value="snapshot_20200723-1.16.1" />
+    <option name="minecraftVersion" value="1.16.1" />
     <option name="srgType" value="TSRG" />
   </component>
 </module>
